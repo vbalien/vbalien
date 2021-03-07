@@ -1,3 +1,4 @@
+[![profile repository workflow](https://github.com/vbalien/vbalien/actions/workflows/push.yml/badge.svg)](https://github.com/vbalien/vbalien/actions/workflows/push.yml)
 ```
 __      ______          _      _____ ______ _   _ 
 \ \    / /  _ \   /\   | |    |_   _|  ____| \ | |
@@ -8,9 +9,6 @@ __      ______          _      _____ ______ _   _
                                                   
                                                   
 ```
-[![profile repository workflow](https://github.com/vbalien/vbalien/actions/workflows/push.yml/badge.svg)](https://github.com/vbalien/vbalien/actions/workflows/push.yml)
-
-
 [![Telegram Badge](https://img.shields.io/badge/-Telegram-2CA5E0?logo=telegram)](https://t.me/vbalien)
 [![Keybase Badge](https://img.shields.io/badge/-Keybase-33A0FF?logo=keybase&logoColor=white)](https://keybase.io/vbalien)
 [![Keybase PGP](https://img.shields.io/keybase/pgp/vbalien)](http://sks.pod02.fleetstreetops.com/pks/lookup?search=0xE98CF73DE1E36F7D1B8A383AFD987F8DBE513071&fingerprint=on&op=index)
