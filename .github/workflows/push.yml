@@ -25,7 +25,7 @@ jobs:
       - name: Push figlet
         run: figlet -f big VBALIEN >> Readme.md
       - name: End Readme
-        run: echo "\n\`\`\`" >> Readme.md
+        run: (echo ; echo "\`\`\`") >> Readme.md
       - name: Git commit and push
         run: |
           git config user.email "gh-action-bot@alien.moe"
