@@ -27,6 +27,8 @@ jobs:
   generate:
     name: Generate
     runs-on: ubuntu-latest
+    env:
+      WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
     needs: test
     steps:
       - name: Check out code
@@ -44,7 +46,8 @@ jobs:
       - name: Append wakatime
         run: |
           echo "📊 Weekly development breakdown" >> Readme.md
-          curl -s -H "Authorization: Basic $(echo "$WAKATIME_API_KEY" | base64)" https://wakatime.com/api/v1/users/current/stats/last_7_days | ./printWakatime.sh >> Readme.md
+          curl -s -H "Authorization: Basic $(echo "$WAKATIME_API_KEY" | base64)" https://wakatime.com/api/v1/users/current/stats/last_7_days \
+            | ./printWakatime.sh >> Readme.md
 
       - name: End Readme
         run: (echo ; echo "\`\`\`") >> Readme.md
