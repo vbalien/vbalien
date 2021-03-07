@@ -45,7 +45,6 @@ jobs:
 
       - name: Append wakatime
         run: |
-          echo "📊 Weekly development breakdown" >> Readme.md
           curl -s -H "Authorization: Basic $(echo "$WAKATIME_API_KEY" | base64)" https://wakatime.com/api/v1/users/current/stats/last_7_days \
             | ./printWakatime.sh >> Readme.md
 
