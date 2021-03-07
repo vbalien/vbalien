@@ -1,0 +1,35 @@
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: "0 1 * * *" # every day at 1am
+   workflow_dispatch:
+
+name: Generate Readme
+jobs:
+  build:
+    name: Install
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Deno
+        uses: denolib/setup-deno@v2
+        with:
+          deno-version: v1.x
+      - name: Install figlet
+        run: sudo apt install figlet
+      - name: Begin Readme
+        run: echo "\`\`\`bash" > Readme.md
+      - name: Push figlet
+        run: figlet -f big VBALIEN >> Readme.md
+      - name: End Readme
+        run: echo "\n\`\`\`" >> Readme.md
+      - name: Git commit and push
+        run: |
+          git config user.email "gh-action-bot@alien.moe"
+          git config user.name "Github Action Bot"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          git checkout master
+          git add Readme.md
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update"; git push origin master)
