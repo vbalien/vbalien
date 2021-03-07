@@ -37,19 +37,22 @@ jobs:
       - name: Install dependencies
         run: sudo apt install figlet bc jq
 
-      - name: Begin Readme
-        run: echo "\`\`\`" > Readme.md
+      - name: Clean Readme
+        run: echo -n > Readme.md
 
       - name: Append figlet
-        run: figlet -f big VBALIEN >> Readme.md
+        run: |
+          echo "\`\`\`" >> Readme.md
+          figlet -f big VBALIEN >> Readme.md
+          echo "\`\`\`" >> Readme.md
 
       - name: Append wakatime
         run: |
+          echo "📊 Weekly development breakdown" >> Readme.md
+          echo "\`\`\`" >> Readme.md
           curl -s -H "Authorization: Basic $(echo "$WAKATIME_API_KEY" | base64)" https://wakatime.com/api/v1/users/current/stats/last_7_days \
             | ./printWakatime.sh >> Readme.md
-
-      - name: End Readme
-        run: (echo ; echo "\`\`\`") >> Readme.md
+          echo "\`\`\`" >> Readme.md
 
       - name: Git commit and push
         run: |

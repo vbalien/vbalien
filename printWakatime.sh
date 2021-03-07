@@ -10,8 +10,6 @@ function print_row {
   printf " %.1f%%\n" $3
 }
 
-echo "📊 Weekly development breakdown"
-
 json_data=$(cat)
 
 LENGTH=$(echo $json_data | jq '.data.languages | length')
