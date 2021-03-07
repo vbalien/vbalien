@@ -1,0 +1,168 @@
+{
+  "zero_units": { "data": { "languages": [] } },
+  "five_units": {
+    "data": {
+      "languages": [
+        {
+          "digital": "12:49",
+          "hours": 12,
+          "minutes": 49,
+          "name": "TypeScript",
+          "percent": 79.41,
+          "text": "12 hrs 49 mins",
+          "total_seconds": 46163.100656
+        },
+        {
+          "digital": "1:05",
+          "hours": 1,
+          "minutes": 5,
+          "name": "Rust",
+          "percent": 6.8,
+          "text": "1 hr 5 mins",
+          "total_seconds": 3955.325414
+        },
+        {
+          "digital": "0:51",
+          "hours": 0,
+          "minutes": 51,
+          "name": "YAML",
+          "percent": 5.32,
+          "text": "51 mins",
+          "total_seconds": 3090.926097
+        },
+        {
+          "digital": "0:43",
+          "hours": 0,
+          "minutes": 43,
+          "name": "HTML",
+          "percent": 4.5,
+          "text": "43 mins",
+          "total_seconds": 2616.772215
+        },
+        {
+          "digital": "0:13",
+          "hours": 0,
+          "minutes": 13,
+          "name": "TOML",
+          "percent": 1.4,
+          "text": "13 mins",
+          "total_seconds": 815.599084
+        }
+      ]
+    }
+  },
+  "more_than_ten": {
+    "data": {
+      "languages": [
+        {
+          "digital": "12:49",
+          "hours": 12,
+          "minutes": 49,
+          "name": "TypeScript",
+          "percent": 79.41,
+          "text": "12 hrs 49 mins",
+          "total_seconds": 46163.100656
+        },
+        {
+          "digital": "1:05",
+          "hours": 1,
+          "minutes": 5,
+          "name": "Rust",
+          "percent": 6.8,
+          "text": "1 hr 5 mins",
+          "total_seconds": 3955.325414
+        },
+        {
+          "digital": "0:51",
+          "hours": 0,
+          "minutes": 51,
+          "name": "YAML",
+          "percent": 5.32,
+          "text": "51 mins",
+          "total_seconds": 3090.926097
+        },
+        {
+          "digital": "0:43",
+          "hours": 0,
+          "minutes": 43,
+          "name": "HTML",
+          "percent": 4.5,
+          "text": "43 mins",
+          "total_seconds": 2616.772215
+        },
+        {
+          "digital": "0:13",
+          "hours": 0,
+          "minutes": 13,
+          "name": "TOML",
+          "percent": 1.4,
+          "text": "13 mins",
+          "total_seconds": 815.599084
+        },
+        {
+          "digital": "0:10",
+          "hours": 0,
+          "minutes": 10,
+          "name": "Markdown",
+          "percent": 1.09,
+          "text": "10 mins",
+          "total_seconds": 633.527084
+        },
+        {
+          "digital": "0:08",
+          "hours": 0,
+          "minutes": 8,
+          "name": "JSON",
+          "percent": 0.93,
+          "text": "8 mins",
+          "total_seconds": 538.195927
+        },
+        {
+          "digital": "0:02",
+          "hours": 0,
+          "minutes": 2,
+          "name": "Other",
+          "percent": 0.24,
+          "text": "2 mins",
+          "total_seconds": 138.491003
+        },
+        {
+          "digital": "0:01",
+          "hours": 0,
+          "minutes": 1,
+          "name": "Text",
+          "percent": 0.15,
+          "text": "1 min",
+          "total_seconds": 89.277396
+        },
+        {
+          "digital": "0:01",
+          "hours": 0,
+          "minutes": 1,
+          "name": "JavaScript",
+          "percent": 0.12,
+          "text": "1 min",
+          "total_seconds": 68.248248
+        },
+        {
+          "digital": "0:00",
+          "hours": 0,
+          "minutes": 0,
+          "name": "CSS",
+          "percent": 0.03,
+          "text": "0 secs",
+          "total_seconds": 16.534715
+        },
+        {
+          "digital": "0:00",
+          "hours": 0,
+          "minutes": 0,
+          "name": "Git Config",
+          "percent": 0.01,
+          "text": "0 secs",
+          "total_seconds": 4.122004
+        }
+      ]
+    }
+  }
+}

@@ -1,3 +1,5 @@
+name: Generate Profile Readme
+
 on:
   push:
     branches:
@@ -5,27 +7,49 @@ on:
   schedule:
     - cron: "0 1 * * *" # every day at 1am
   workflow_dispatch:
- 
 
-name: Generate Readme
 jobs:
-  build:
-    name: Install
+  test:
+    name: Test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Deno
-        uses: denolib/setup-deno@v2
+      - name: Setup BATS
+        uses: mig4/setup-bats@v1
         with:
-          deno-version: v1.x
-      - name: Install figlet
-        run: sudo apt install figlet
+          bats-version: 1.2.1
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: sudo apt install bc jq
+      - name: Run tests
+        run: bats --tap test
+
+  generate:
+    name: Generate
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: sudo apt install figlet bc jq
+
       - name: Begin Readme
-        run: echo "\`\`\`bash" > Readme.md
-      - name: Push figlet
+        run: echo "\`\`\`" > Readme.md
+
+      - name: Append figlet
         run: figlet -f big VBALIEN >> Readme.md
+
+      - name: Append wakatime
+        run: |
+          echo "📊 Weekly development breakdown"
+          curl -s -H "Authorization: Basic $(echo "$WAKATIME_API_KEY" | base64)" https://wakatime.com/api/v1/users/current/stats/last_7_days \
+            | ./printWakatime.sh >> Readme.md
+
       - name: End Readme
         run: (echo ; echo "\`\`\`") >> Readme.md
+
       - name: Git commit and push
         run: |
           git config user.email "gh-action-bot@alien.moe"
