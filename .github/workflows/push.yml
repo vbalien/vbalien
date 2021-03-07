@@ -29,6 +29,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
+      LAFTEL_UID: ${{ secrets.LAFTEL_UID }}
+      LAFTEL_TOKEN: ${{ secrets.LAFTEL_TOKEN }}
     needs: test
     steps:
       - name: Check out code
@@ -52,6 +54,14 @@ jobs:
           echo "\`\`\`" >> Readme.md
           curl -s -H "Authorization: Basic $(echo "$WAKATIME_API_KEY" | base64)" https://wakatime.com/api/v1/users/current/stats/last_7_days \
             | ./printWakatime.sh >> Readme.md
+          echo "\`\`\`" >> Readme.md
+
+      - name: Append laftel
+        run: |
+          echo "📺 Laftel 최근 본 애니" >> Readme.md
+          echo "\`\`\`" >> Readme.md
+          curl -s -H "laftel: TeJava" -H "authorization: Token $LAFTEL_TOKEN" https://laftel.net/api/v1.0/users/$LAFTEL_UID/playhistory_set/ \
+            | ./printLaftel.sh >> Readme.md
           echo "\`\`\`" >> Readme.md
 
       - name: Git commit and push
