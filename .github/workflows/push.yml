@@ -73,8 +73,7 @@ jobs:
         run: |
           echo "📖 RidiBooks 최근 구매한 책" >> Readme.md
           echo "\`\`\`" >> Readme.md
-          curl "https://library-api.ridibooks.com/items/main/?offset=0&limit=10&order_type=purchase_date&order_by=desc" \
-            --header "Cookie: ridi-at=$(./util/getRidiAccessToken.sh);" \
+          curl -s -H "Cookie: ridi-at=$(./util/getRidiAccessToken.sh)" "https://library-api.ridibooks.com/items/main/?offset=0&limit=10&order_type=purchase_date&order_by=desc" \
             | ./printRidi.sh >> Readme.md
           echo "\`\`\`" >> Readme.md
 
