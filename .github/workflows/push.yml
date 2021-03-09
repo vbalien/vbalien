@@ -31,6 +31,9 @@ jobs:
       WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
       LAFTEL_UID: ${{ secrets.LAFTEL_UID }}
       LAFTEL_TOKEN: ${{ secrets.LAFTEL_TOKEN }}
+      RIDI_USER_ID: ${{ secrets.RIDI_USER_ID }}
+      RIDI_USER_PW: ${{ secrets.RIDI_USER_PW }}
+      RIDI_CLIENT_ID: ${{ secrets.RIDI_CLIENT_ID }}
     needs: test
     steps:
       - name: Check out code
@@ -64,6 +67,15 @@ jobs:
           echo "\`\`\`" >> Readme.md
           curl -s -H "Authorization: Basic $(echo "$WAKATIME_API_KEY" | base64)" https://wakatime.com/api/v1/users/current/stats/last_7_days \
             | ./printWakatime.sh >> Readme.md
+          echo "\`\`\`" >> Readme.md
+
+      - name: Append ridibooks
+        run: |
+          echo "📖 RidiBooks 최근 구매한 책" >> Readme.md
+          echo "\`\`\`" >> Readme.md
+          curl "https://library-api.ridibooks.com/items/main/?offset=0&limit=10&order_type=purchase_date&order_by=desc" \
+            --header "Cookie: ridi-at=$(./util/getRidiAccessToken.sh);" \
+            | ./printRidi.sh >> Readme.md
           echo "\`\`\`" >> Readme.md
 
       - name: Append laftel
