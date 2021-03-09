@@ -12,7 +12,7 @@ fixtures laftel
 @test "Laftel exact match row" {
   run bash -c "cat $FIXTURE_ROOT/data.json | jq .five_units | ./printLaftel.sh"
   [ $status -eq 0 ]
-  [ "${lines[0]}" = "진격의 거인 The FINAL                         2021년 1분기" ]
+  [ "${lines[0]}" = "[2021년 1분기] 진격의 거인 The FINAL" ]
 }
 
 @test "Laftel 5 animation units" {

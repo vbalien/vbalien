@@ -3,8 +3,7 @@
 # $1 : title
 # $2 : year quarter
 function print_row {
-  printf "%-50s " "$1"
-  printf "%-15s\n" "$2"
+  printf "[%s] %s\n" "$2" "$1"
 }
 
 JSON_DATA=$(cat)
