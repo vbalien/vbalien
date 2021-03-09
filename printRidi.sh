@@ -3,7 +3,7 @@
 # %1: title
 # %2 : count
 function print_row {
-  printf "[총 %-3s권] %s \n" "$2" "$1"
+  printf "[총 %2s 권] %s \n" "$2" "$1"
 }
 
 JSON_DATA=$(cat)

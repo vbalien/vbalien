@@ -12,7 +12,7 @@ fixtures ridi
 @test "Ridi exact match row" {
   run bash -c "cat $FIXTURE_ROOT/data.json | jq .ten_units | ./printRidi.sh"
   [ $status -eq 0 ]
-  [ "${lines[0]}" = "[총 7  권] 이 멋진 세계에 축복을! 시리즈 " ]
+  [ "${lines[0]}" = "[총  7 권] 이 멋진 세계에 축복을! 시리즈 " ]
 }
 
 @test "Ridi 2 books" {
