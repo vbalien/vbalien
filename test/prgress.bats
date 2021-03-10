@@ -19,13 +19,13 @@
 }
 
 @test "Less than 0% progress bar rendering " {
-  run util/progressbar.sh 0
+  run util/progressbar.sh -50
   [ $status -eq 0 ]
   [ "$output" = "░░░░░░░░░░░░░░░░░░░░" ]
 }
 
 @test "More than 100% progress bar rendering" {
-  run util/progressbar.sh 100
+  run util/progressbar.sh 120
   [ $status -eq 0 ]
   [ "$output" = "████████████████████" ]
 }
