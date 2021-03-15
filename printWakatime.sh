@@ -4,7 +4,7 @@
 # $2 : time string
 # $3 : percentage
 function print_row {
-  printf "%-15s " $1
+  printf "%-15s " "$1"
   printf "%-15s " "$2"
   util/progressbar.sh $3
   printf " %.1f%%\n" $3
@@ -22,7 +22,7 @@ else
     NAME=$(echo $JSON_DATA | jq -r ".data.languages[$i].name")
     TIMES=$(echo $JSON_DATA | jq -r ".data.languages[$i].text")
     PERCENT=$(echo $JSON_DATA | jq -r ".data.languages[$i].percent")
-    print_row $NAME "$TIMES" $PERCENT
+    print_row "$NAME" "$TIMES" $PERCENT
   done
 fi
 
