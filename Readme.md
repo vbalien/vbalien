@@ -14,14 +14,3 @@ __      ______          _      _____ ______ _   _
 [![Keybase PGP](https://img.shields.io/keybase/pgp/vbalien)](http://sks.pod02.fleetstreetops.com/pks/lookup?search=0xE98CF73DE1E36F7D1B8A383AFD987F8DBE513071&fingerprint=on&op=index)
 [![Twitter Follow](https://img.shields.io/twitter/follow/_elnyan)](https://twitter.com/_elnyan)
 
-📊 Weekly development breakdown
-```
-Nothing
-```
-📖 RidiBooks 최근 구매한 책
-```
-```
-📺 Laftel 최근 본 애니
-```
-Nothing
-```
